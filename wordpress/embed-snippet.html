@@ -1,0 +1,38 @@
+<!--
+  BizApp247 avatar demo — WordPress hero embed
+  ============================================
+  Paste this into a Custom HTML block (Gutenberg) or your page builder's
+  HTML element, inside the hero section.
+
+  Why an iframe: WordPress themes/plugins load their own CSS and JS that
+  will fight a bare embed. The iframe isolates the widget completely and
+  lets you update it without touching WP.
+
+  Host widget/index.html + widget.js + widget.css anywhere static
+  (Cloudflare Pages, Vercel, S3, or a subdomain like demo.bizapp247.com)
+  and point the src below at it.
+
+  IMPORTANT: allow="microphone" is required or the visitor's mic prompt
+  will silently fail inside the iframe.
+-->
+
+<div style="max-width:1020px;margin:0 auto;">
+  <iframe
+    src="https://demo.bizapp247.com/index.html"
+    title="BizApp247 live AI demo"
+    style="width:100%;height:640px;border:0;border-radius:16px;overflow:hidden;"
+    allow="microphone; camera; autoplay"
+    loading="lazy">
+  </iframe>
+</div>
+
+<!--
+  Mobile: the widget stacks vertically below 760px. If your theme constrains
+  hero height, bump the iframe height to ~900px under a mobile media query,
+  or use a small script to postMessage the widget's height out. Keeping it
+  simple with a fixed height is fine for v1.
+
+  To point the widget at your API without rebuilding, index.html can set:
+    <script>window.BIZAPP_API_BASE = "https://api.bizapp247.com";</script>
+  before loading widget.js.
+-->

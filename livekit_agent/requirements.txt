@@ -1,0 +1,10 @@
+# Core
+livekit-agents
+python-dotenv
+livekit
+
+# LiveKit plugins used in app.py
+livekit-plugins-silero
+livekit-plugins-tavus
+livekit-plugins-ai-coustics
+livekit-plugins-liveavatar

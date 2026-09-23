@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizApp247 — Meet Your AI Employee</title>
+  <link rel="stylesheet" href="widget.css" />
+</head>
+<body>
+  <main class="panel" id="panel">
+
+    <!-- LEFT: avatar stage -->
+    <section class="stage" id="stage">
+      <div class="stage-idle" id="stageIdle">
+        <p class="eyebrow">BizApp247 · AutoPilot AI™</p>
+        <h1>Meet the AI employee<br />that never clocks out.</h1>
+        <p class="sub">Bailey will walk you through a 60-second setup,
+          then call your phone — live — so you hear exactly what your
+          customers would.</p>
+        <button class="btn-start" id="btnStart">
+          <span class="pulse" aria-hidden="true"></span>
+          Start the live demo
+        </button>
+        <p class="fineprint">Uses your mic so you can talk back. No account needed.</p>
+      </div>
+
+      <div class="stage-live hidden" id="stageLive">
+        <video id="avatarVideo" autoplay playsinline></video>
+        <div class="live-badge"><span class="pulse" aria-hidden="true"></span>LIVE</div>
+        <div class="captions" id="captions" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT: guided form -->
+    <section class="formside">
+      <form id="leadForm" novalidate>
+        <ol class="rail" id="rail" aria-label="Setup progress">
+          <li class="rail-step" data-step="first_name">
+            <label for="first_name">First name</label>
+            <input id="first_name" name="first_name" type="text" autocomplete="given-name" required />
+          </li>
+          <li class="rail-step" data-step="last_name">
+            <label for="last_name">Last name</label>
+            <input id="last_name" name="last_name" type="text" autocomplete="family-name" required />
+          </li>
+          <li class="rail-step" data-step="email">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </li>
+          <li class="rail-step" data-step="phone">
+            <label for="phone">Mobile number <span class="hint">— our AI will call this for your demo</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </li>
+          <li class="rail-step" data-step="business_name">
+            <label for="business_name">Business name</label>
+            <input id="business_name" name="business_name" type="text" autocomplete="organization" required />
+          </li>
+          <li class="rail-step" data-step="industry">
+            <label for="industry">Your industry</label>
+            <select id="industry" name="industry" required>
+              <option value="" disabled selected>Choose your industry…</option>
+              <option>HVAC</option>
+              <option>Auto Dealer</option>
+              <option>Home Remodeling</option>
+              <option>Collision Repair</option>
+              <option>Real Estate</option>
+              <option>Nonprofit</option>
+              <option>Barber Shop</option>
+              <option>Other Service Business</option>
+            </select>
+          </li>
+        </ol>
+
+        <button class="btn-submit" id="btnSubmit" type="submit" disabled>
+          Submit &amp; open my demo
+        </button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script>window.BIZAPP_API_BASE = "https://b50b-39-62-209-74.ngrok-free.app";</script>
+  <script type="module" src="widget.js"></script>
+</body>
+</html>
